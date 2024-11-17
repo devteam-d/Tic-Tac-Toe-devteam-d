@@ -10,7 +10,7 @@
 
 /* 各セルのスタイル */
 .board td {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 60px;
     height: 60px;
     text-align: center;
@@ -21,6 +21,17 @@
 .cell {
     width: 100px;
     height: 100px;
-    border: 1px solid black;
-
+    /* border: 1px solid black; */
+    margin: 0px;
+    padding: 0px;
 }   
+
+
+.position-0, .position-1, .position-2, .position-3, .position-4, .position-5 {
+    border-bottom: 1px solid black;
+}
+
+
+.position-0, .position-1, .position-3, .position-4, .position-6, .position-7 {
+    border-right: 1px solid black;
+}
