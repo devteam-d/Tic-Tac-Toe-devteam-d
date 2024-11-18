@@ -31,7 +31,7 @@
 }
 
 /* 碁盤のたて線とよこ線が交わるところのすき間をつなげる */
-.board {
+.Board {
     /* margin: auto; 自動で中央揃え */
     border-collapse: collapse; /* セルの境界をまとめる */
     margin: 0;
