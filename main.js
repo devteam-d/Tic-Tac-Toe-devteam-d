@@ -1,4 +1,6 @@
-
+const modal = document.getElementById("modal");
+const resultText = document.getElementById("result-text");
+const restartBtn = document.getElementById("restart-btn");
 let cells = document.querySelectorAll(".cell"); // セルの要素を取得
 let turnText = document.querySelector("h2"); // ターン表示の要素を取得
 let board = Array(9).fill(undefined); // 盤面の状態を保存する配列
@@ -106,7 +108,7 @@ function checkGameStatus() {
     for (let pattern of winPatterns) { // patternにwinPatternsが格納される
         let [a, b, c] = pattern; // patternの配列をa,b,cに分割して代入　例えばpattern[0,1,2]をa=0,b=1,c=2という形にします
         // a,b,cには勝利パターンに該当するインデックスが格納されます
-        if (board[a] && board[a] === board[b] && board[b] === board[c]) { //// board[a],board[b],board[c]の3つのセルの状態をチェックします 3つのセルに同じ記号が入っていればtrue
+        if (board[a] && board[a] === board[b] && board[b] === board[c]) { // board[a],board[b],board[c]の3つのセルの状態をチェックします 3つのセルに同じ記号が入っていればtrue
             // board[a] && board[a]はどちらか記号が入っていればtrue入っていなければ（undefined）false、
             // board[a] === board[b]は同じ記号が入っていればtrue
             // board[b] === board[c]は同じ記号が入っていればtrue
@@ -114,6 +116,7 @@ function checkGameStatus() {
             turnText.textContent = board[a] === playerSymbol ? "You Win!" : "Computer Wins!"; 
             // board[a]がプレイヤーの記号playerSymbolと等しいかチェックし、等しい場合はプレイヤー勝利、等しくない場合はコンピューターの勝利のテキストを表示
             
+            showResult(board[a] === playerSymbol ? "X" : "O"); //
             gameActive = false; // ゲーム終了
             return;
         }
@@ -121,11 +124,24 @@ function checkGameStatus() {
 
     if (!board.includes(undefined)) { // board配列に空のセル（undefined）が存在するか調べる
         // 全てのセルが埋まっている場合true、空のセルがある場合false
-        //trueの場合、indexファイルの<h2></h2>に"Draw!"が表示される
-        turnText.textContent = "Draw!";
+        showResult("Draw");//
         gameActive = false; // ゲーム終了
     }
 }
+
+// 結果を表示する関数
+function showResult(winner) {
+  resultText.textContent = winner === "Draw"
+    ? "Draw!"
+    : `${winner} Wins!!!`;
+  modal.classList.remove("hidden"); // hiddenクラスを取り除くことによってmodal画面が表示される
+}
+
+// リスタートボタンが押されたときの処理
+restartBtn.addEventListener("click", function () {
+  modal.classList.add("hidden"); // hiddenクラスを足し戻すことでモーダルを非表示
+  init(); // 盤面を初期化（既存のinit関数を呼び出し）
+});
 
 // ゲーム開始時の初期化
 init();
