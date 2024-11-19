@@ -1,3 +1,4 @@
+
 let cells = document.querySelectorAll(".cell"); // セルの要素を取得
 let turnText = document.querySelector("h2"); // ターン表示の要素を取得
 let board = Array(9).fill(undefined); // 盤面の状態を保存する配列
