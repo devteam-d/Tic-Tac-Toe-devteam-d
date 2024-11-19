@@ -1,3 +1,42 @@
+/* 全要素を中央揃え */
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: centor;
+    align-items: center;
+}
+
+
+
+/* 碁盤のマス目に対応する各セルのスタイル */
+.cell {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 50px;
+}
+
+
+
+/* 碁盤のよこ線を引くために，よこ線に対応するセルの下線を引く */
+.position-0, .position-1, .position-2, .position-3, .position-4, .position-5 {
+    border-bottom: 1px solid black;
+}
+
+/* 碁盤のたて線を引くために，たて線に対応するセルの右線を引く */
+.position-0, .position-1, .position-3, .position-4, .position-6, .position-7 {
+    border-right: 1px solid black;
+}
+
+/* 碁盤のたて線とよこ線が交わるところのすき間をつなげる */
+.Board {
+    /* margin: auto; 自動で中央揃え */
+    border-collapse: collapse; /* セルの境界をまとめる */
+    margin: 0;
+}
+
 .hidden {
     display: none;
   }
