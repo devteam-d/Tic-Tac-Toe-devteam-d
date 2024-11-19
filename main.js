@@ -8,16 +8,16 @@ function showResult(winner) {
   resultText.textContent = winner === "Draw"
     ? "Draw!"
     : `${winner} Wins!!!`;
-  modal.classList.remove("hidden");
+  modal.classList.remove("hidden"); // hiddenクラスを取り除くことによってmodal画面が表示される
 }
 
 // リスタートボタンが押されたときの処理
 restartBtn.addEventListener("click", function () {
-  modal.classList.add("hidden"); // モーダルを非表示
+  modal.classList.add("hidden"); // hiddenクラスを足し戻すことでモーダルを非表示
   init(); // 盤面を初期化（既存のinit関数を呼び出し）
 });
 
-// 勝敗が決したらモーダルを表示（例: checkGameStatusから呼び出し）
+// 途中showResult関数を入れることによって勝敗メッセージ表示のロジックが簡易になるため、以下のように変更してもよろしいでしょうか？
 function checkGameStatus() {
   for (let pattern of winPatterns) {
     let [a, b, c] = pattern;
