@@ -3,8 +3,10 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: centor;
+    justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 
