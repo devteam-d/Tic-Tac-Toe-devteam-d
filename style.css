@@ -9,20 +9,36 @@
 
 /* 碁盤のマス目に対応する各セルのスタイル */
 .cell {
-  width: 100px;
-  height: 100px;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 50px;
+  padding: 0; /* 余白をゼロに設定 */
+  width: 100px; /* セルの幅 */
+  height: 100px; /* セルの高さ */
+  text-align: center; /* 水平方向に中央揃え */
+  vertical-align: middle; /* 垂直方向に中央揃え */
+  font-size: 70px; /* フォントサイズ */
+  line-height: 100px; /* 行の高さをセルの高さと一致させる */
+  display: inline-block; /* 行内要素として扱う */
+  box-sizing: border-box; /* パディングとボーダーを含めて幅・高さを計算 */
+  
 }
+
+.cell:hover { /* 選択中のセル上に色を変えた✖を表示 */
+  color: rgb(211, 211, 211);
+}
+
+.cell.selected:hover {
+  color: black; /* 選択済みセルの色をホバーしても変えない */
+}
+
 
 /* 碁盤のよこ線を引くために，よこ線に対応するセルの下線を引く */
 .position-0, .position-1, .position-2, .position-3, .position-4, .position-5 {
+  padding: 0;  
   border-bottom: 1px solid black;
 }
 
 /* 碁盤のたて線を引くために，たて線に対応するセルの右線を引く */
 .position-0, .position-1, .position-3, .position-4, .position-6, .position-7 {
+  padding: 0;  
   border-right: 1px solid black;
 }
 
