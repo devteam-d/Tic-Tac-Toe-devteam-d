@@ -11,12 +11,14 @@
 
 /* 碁盤のマス目に対応する各セルのスタイル */
 .cell {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bolder;
+  font-size: 90px; /* フォントサイズ */
   padding: 0; /* 余白をゼロに設定 */
   width: 100px; /* セルの幅 */
   height: 100px; /* セルの高さ */
   text-align: center; /* 水平方向に中央揃え */
   vertical-align: middle; /* 垂直方向に中央揃え */
-  font-size: 70px; /* フォントサイズ */
   line-height: 100px; /* 行の高さをセルの高さと一致させる */
   display: inline-block; /* 行内要素として扱う */
   box-sizing: border-box; /* パディングとボーダーを含めて幅・高さを計算 */
