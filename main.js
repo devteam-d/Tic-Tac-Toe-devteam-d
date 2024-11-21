@@ -135,7 +135,7 @@ function checkGameStatus() {
 function showResult(winner) {
   resultText.textContent = winner === "Draw"
     ? "Draw!"
-    : `${winner} Wins!!!`;
+    : `${winner}'s Wins!!!`;
     modal.classList.remove("hidden"); // hiddenクラスを取り除くことによってmodal画面が表示される 
 }
 
