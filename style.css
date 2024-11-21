@@ -1,10 +1,12 @@
 /* 全要素を中央揃え */
 .container {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 /* 碁盤のマス目に対応する各セルのスタイル */
