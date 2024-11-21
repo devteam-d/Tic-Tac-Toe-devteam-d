@@ -25,6 +25,7 @@ const winPatterns = [
 function init() {
     cells.forEach(function(cell, index)  { //cell, indexでどのセルか特定
         cell.textContent = ''; // すべてのセルをクリア
+        cell.classList.remove("selected"); // 選択済みクラスをリセット 
         cell.onclick = function() {
             handlePlayerMove(index)
         }; // handlePlayerMove(index)が呼び出される。
@@ -58,6 +59,7 @@ function handlePlayerMove(index) {//クリックされたセルにプレイヤ�
 
     board[index] = playerSymbol; // board配列の指定されたindex(クリックされたセル)にプレイヤーの記号をセット
     cells[index].textContent = playerSymbol; // 画面にプレイヤーがクリックしたセルにプレイヤーの記号を表示
+    cells[index].classList.add("selected"); // 選択されたセルを記録、選択されたセルとしてカーソルを合わせても黒色のまま 
     count++; //ゲームのターンをカウント
     checkGameStatus(); // 現在の盤面を基に勝敗判定
 
@@ -94,6 +96,7 @@ function handleComputerMove() {
 
     board[randomIndex] = computerSymbol; // 盤面に記録
     cells[randomIndex].textContent = computerSymbol; // セルに記号を表示
+    cells[randomIndex].classList.add("selected"); // 選択されたセルを記録
     count++;
     checkGameStatus(); // 勝敗判定
 
@@ -113,8 +116,7 @@ function checkGameStatus() {
             // board[a] === board[b]は同じ記号が入っていればtrue
             // board[b] === board[c]は同じ記号が入っていればtrue
             
-            turnText.textContent = board[a] === playerSymbol ? "You Win!" : "Computer Wins!"; 
-            // board[a]がプレイヤーの記号playerSymbolと等しいかチェックし、等しい場合はプレイヤー勝利、等しくない場合はコンピューターの勝利のテキストを表示
+            turnText.classList.add("hidden");// 手順のテキストを非表示
             
             showResult(board[a] === playerSymbol ? "X" : "O"); //
             gameActive = false; // ゲーム終了
@@ -133,8 +135,8 @@ function checkGameStatus() {
 function showResult(winner) {
   resultText.textContent = winner === "Draw"
     ? "Draw!"
-    : `${winner} Wins!!!`;
-  modal.classList.remove("hidden"); // hiddenクラスを取り除くことによってmodal画面が表示される
+    : `${winner}'s Wins!!!`;
+    modal.classList.remove("hidden"); // hiddenクラスを取り除くことによってmodal画面が表示される 
 }
 
 // リスタートボタンが押されたときの処理
@@ -142,6 +144,5 @@ restartBtn.addEventListener("click", function () {
   modal.classList.add("hidden"); // hiddenクラスを足し戻すことでモーダルを非表示
   init(); // 盤面を初期化（既存のinit関数を呼び出し）
 });
-
-// ゲーム開始時の初期化
+// ゲーム開始の初期化
 init();
