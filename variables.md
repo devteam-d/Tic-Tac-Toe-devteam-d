@@ -33,3 +33,15 @@ count：ターン数
 gameActive：ゲームの状態を管理 trueなら継続、falseなら終了
 
 winPatterns：価値条件の配列
+
+task-C style.css
+
+modal: モーダル要素（ゲーム終了時の結果表示用）を取得する。
+
+resultText: 勝敗や引き分けの結果を表示するテキスト要素を取得する。
+
+restartBtn: リスタートボタンの要素を取得する。
+
+showResult(winner): 勝者や引き分けの結果を表示する。モーダル画面を表示し、結果テキストを更新する。
+
+restartBtn.addEventListener("click", function () { ... }): リスタートボタンがクリックされたときに、ゲームを初期化して再開する。
