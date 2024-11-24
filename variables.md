@@ -1,21 +1,5 @@
 変数、クラスリスト
 
-task-A index.html、style.css
-container：
-title：
-board：
-cell position-0：
-cell position-1：
-cell position-2：
-cell position-3：
-cell position-4：
-cell position-5：
-cell position-6：
-cell position-7：
-cell position-8：
-
-
-task-B　main.js
 cells：index.htmlの盤面のcellの要素を取得変更
 
 turnText：index.htmlの<h2>の要素を取得変更。誰の番かを表示。勝敗や引き分けを表示
