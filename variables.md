@@ -2,7 +2,7 @@
 
 cells：index.htmlの盤面のcellの要素を取得変更
 
-turnText：index.htmlの<h2>の要素を取得変更。誰の番かを表示。勝敗や引き分けを表示
+turnText：index.htmlのh2の要素を取得変更。誰の番かを表示。勝敗や引き分けを表示
 
 board：ゲーム盤の状態を管理するための配列。各セルに何が配置されているかを記録する
 
@@ -29,3 +29,6 @@ restartBtn: リスタートボタンの要素を取得する。
 showResult(winner): 勝者や引き分けの結果を表示する。モーダル画面を表示し、結果テキストを更新する。
 
 restartBtn.addEventListener("click", function () { ... }): リスタートボタンがクリックされたときに、ゲームを初期化して再開する。
+
+restartBtn.addEventListener("click", function () { ... }): リスタートボタンがクリックされたときに、ゲームを初期化して再開する。
+
